@@ -1,0 +1,380 @@
+:root {
+    --color-main: #ffa31b;
+}
+
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+::-webkit-scrollbar {
+    width: 0.3rem;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: .3rem;
+    background: var(--color-main);
+}
+/* Начало сайдбара */
+.sidebar {
+    width: 280px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    padding: 1rem 0 1rem 1.5rem;
+    background: black;
+    color: white;
+    border-right: 10px solid var(--color-main);
+    transition: left .3s ease;
+}
+.brand-icons {
+    height: 100px;
+    display: flex;
+    justify-content: end;
+}
+.brand-icons span{
+    font-size: 1.3rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+.brand-icons span:hover {
+    color: var(--color-main);
+}
+.sidebar-user {
+    margin: 0 0 1rem 0;
+    text-align: center;
+}
+.sidebar-user h3 {
+    font-size: 1rem;
+}
+.sidebar-user span {
+    font-size: .8rem;
+    color: #ccc;
+
+}
+.sidebar-user img {
+    width: 100%;
+}
+.sidebar-menu {
+    margin-top: 3rem;
+}
+.menu-head {
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-weight: 500;
+    letter-spacing: 5px;
+    margin-bottom: 0.5rem;
+}
+.sidebar-menu ul {
+    margin-bottom: 1.5rem;
+}
+.sidebar-menu ul li {
+    position: relative;
+    margin-bottom: .8rem;
+    padding-left: .5rem;
+    height: 40px;
+    color: #ccc;
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+.sidebar-menu ul li.active::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -20px;
+    right: 0px;
+    border-radius: 50%;
+    box-shadow: 10px 10px 0 var(--color-main);
+}
+.sidebar-menu ul li.active::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    bottom: -20px;
+    right: 0px;
+    border-radius: 50%;
+    box-shadow: 10px -10px 0 var(--color-main);
+}
+.sidebar-menu ul li.active {
+    background: var(--color-main);
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    color: black;
+}
+.sidebar-menu ul li span {
+    font-size: 1.5rem;
+    display: inline-block;
+    margin-right: .8rem;
+}
+.sidebar-menu ul li:not(.active):hover {
+    color: var(--color-main);
+}
+/* Конец сайдбара */
+.main-content {
+    margin-left: 280px;
+    margin-top: 70px;
+    transition: .3s ease;
+    overflow: hidden;
+}
+/* Начало навбара */
+.main-content header {
+    width: calc(100vw - 280px);
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 280px;
+    z-index: 111;
+    background: white;
+    transition: .3s ease;
+}
+.header-icons span {
+    display: inline-block;
+    margin-left: 0.7rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.header-icons span:hover {
+    color: var(--color-main);
+}
+.menu-toggle label {
+    height: 60px;
+    width: 60px;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    transition: .2s ease;
+    cursor: pointer;
+}
+.menu-toggle label:hover {
+    background: #efefef;
+    color: var(--color-main);
+}
+/* Конец навбара */
+.main-content main {
+    padding: 1.5rem;
+    background: #f1f5f9;
+    min-height: calc(100vh - 70px);
+}
+/* Начало первого блока */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+}
+.header-actions {
+    display: flex;
+}
+.header-actions button{
+    height: 50px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: var(--color-main);
+    padding: .6rem 1rem;
+    margin-left: 1rem;
+    border-radius: 3px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    transition: .2s ease;
+}
+.header-actions button:hover {
+    background: black;
+    color: white;
+}
+.header-actions button span {
+    font-size: 1.2rem;
+    margin-right: .6rem;
+}
+/* Конец первого блока */
+/* Начало блока с карточками */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 3rem;
+    margin-top: 2rem;
+}
+.card-single {
+    background: white;
+    padding: 1rem;
+    box-shadow: 4px 4px 10px rgba(0,0,0,.1);
+    border-radius: 2px;
+}
+.card-flex {
+    display: grid;
+    grid-template-columns: 70% auto;
+    align-items: center;
+}
+.card-head span {
+    display: block;
+    text-transform: uppercase;
+    color: #555;
+    font-size: .9rem;
+}
+.card-head small {
+    font-weight: 600;
+    color: #555;
+}
+.card-info h2 {
+    font-size: 2.2rem;
+    color: #333;
+}
+.card-chart span {
+    font-size: 5rem;
+}
+.card-chart.success span {
+    color: seagreen;
+}
+.card-chart.danger span {
+    color: tomato;
+}
+.card-chart.yellow span {
+    color: var(--color-main);
+}
+/* Конец блока с карточками */
+/* Начало третьего блока */
+.jobs-grid {
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+.analytics-card {
+    flex: 1 1 300px;
+    background: white;
+    padding: 1.5rem;
+}
+.analytics-card button {
+    display: block;
+    padding: 0.6rem 1rem;
+    width: 100%;
+    height: 45px;
+    background: var(--color-main);
+    color: black;
+    transition: .2s ease;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.analytics-card button:hover {
+    background: black;
+    color: white;
+}
+.analytics-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+.analytics-head span {
+    font-size: 1.5rem;
+}
+.analytics-chart small{
+    font-weight: 600;
+    color: #555;
+    display: block;
+    margin-bottom: 1rem;
+}
+.analytics-note {
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+}
+.chart-circle {
+    height: 150px;
+    width: 150px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid var(--color-main);
+    border-bottom: 10px solid var(--color-main);
+    border-top: 10px solid var(--color-main);
+    display: grid;
+    place-items: center;
+    margin: auto;
+    border-radius: 50%;
+    margin-bottom: 3rem;
+}
+.jobs {
+    flex: 1 1 300px;
+}
+.jobs h2 small {
+    color: var(--color-main);
+    font-weight: 600;
+    display: inline-block;
+    font-size: .9rem;
+    cursor: pointer;
+    transition: .3s ease;
+    margin-bottom: 1rem;
+}
+.jobs h2 small:hover {
+    color: black;
+}
+
+.jobs table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.jobs table tr {
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+}
+.jobs table td {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    background: white;
+    height: 60px;
+    padding: .5rem;
+    color: #444;
+    font-weight: 500;
+    font-size: .85rem;
+}
+.jobs table tr button {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    margin-left: 1rem;
+    background: var(--color-main);
+    color: black;
+    transition: .2s ease;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.jobs table tr button:hover {
+    background: black;
+    color: white;
+}
+/* Конец третьего блока */
+/* Стили при переключении сайдбара */
+#sidebar-toggle {
+    display: none;
+}
+#sidebar-toggle:checked ~ .sidebar {
+    left: -100%;
+}
+
+#sidebar-toggle:checked ~ .main-content header {
+    left: 0;
+    width: 100%;
+}
+#sidebar-toggle:checked ~ .main-content {
+    margin-left: 0;
+}
